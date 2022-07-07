@@ -9,7 +9,7 @@ body{
 }
 
 .container{
-    width: 70%;
+    width: 80%;
     height: 250px;
     background-color: #fff;
     border-radius: 30px;
@@ -46,12 +46,22 @@ button span{
     padding-right: 20px;
 }
 
+#play:hover{
+    background-color: rgba(0, 128, 0, 0.608);
+}
+
 #pause{
     background-color: orange;
 }
 
+
+
 #reset{
     background-color: red;
+}
+
+#reset:hover{
+    background-color: rgba(255, 0, 0, 0.645);
 }
 
 #timer{
