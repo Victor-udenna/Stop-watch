@@ -9,75 +9,82 @@ body{
 }
 
 .container{
-    width: 60%;
+    width: 70%;
     height: 250px;
     background-color: #fff;
     border-radius: 30px;
     box-shadow: 0 0 3px;
+    padding-bottom: 5%;
 
 }
 
-
-
-#timer{
-    width: 100%;
-    font-size: 72px;
+    
+.buttons{
     text-align: center;
-    margin: 0px auto;
-    padding: 35px;
+    padding-top: 100px;
 }
-
-.button-container{
-    text-align: center;
-    margin-top: 40px;
-}
-
-
 
 button{
-    margin: 0px 10px;
+    margin: 0 10px;
     border: none;
-
-}
-
-
-
-#startStop {
-background-color: red;
-color: white;
-width: 70px;
-padding: 10px;
-font-size: 20px;
-font-weight: 600;
-border-radius: 10px;
-} 
-
-#startStop:hover{
-    color: red;
+    
     background-color: white;
-    border: 3px solid red;
 }
 
-/* #play{
+button span{
+    font-size: 1.4rem;
+    padding: 10px;
+    color: #fff;
+    width: 70px;
+    border-radius: 7px;
+    /* width: 50px; */
+}
+
+#play{
     background-color: green;
-     width: 100%;
-     padding: 10px;
-     border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 #pause{
-    background-color: yellow;
-    width: 100%;
-    padding: 10px;
-    border-radius: 20px;
-/* }* */
-
-#resetBtn{
-    background-color: rgb(0, 255, 72);
-    width: 70px;
-    padding: 10px;
-    font-size: 20px;
-    border-radius: 10px;
+    background-color: orange;
 }
+
+#reset{
+    background-color: red;
+}
+
+#timer{
+    width: 100%;
+    font-size: 54px;
+    text-align: center;
+    margin: 0px auto;
+    padding-top: 35px;
+    transform: .3s;
+}
+
+
+
+@media screen and (min-width: 1024px){
+
+    .container{
+        width: 60%;
+        height: 250px;
+        background-color: #fff;
+        border-radius: 30px;
+        box-shadow: 0 0 3px;
+        padding-bottom: 5%;
+    
+    }
+
+    #timer{
+        font-size: 72px;
+    }
+
+
+    
+
+}
+
 
 
