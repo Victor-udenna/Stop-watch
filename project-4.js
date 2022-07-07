@@ -5,14 +5,14 @@ const resetBtn = document.querySelector('#resetBtn');
 
 
 // variables for time value
-let milliseconds = 0;
+
 let seconds = 0;
 let minutes = 0;
 let hours = 0;
 
 
 // variable for leading zero
-let leadmilliseconds = 0;
+
 let leadingSeconds = 0;
 let leadingMinutes = 0;
 let leadingHour = 0;
@@ -26,12 +26,8 @@ let timerStatus = "stopped";
 // Stop watch function
 
 function stopWatch() {
-    milliseconds++
+    seconds++
 
-    if (milliseconds / 60 === 1) {
-        milliseconds = 0;
-        seconds++;
-    }
 
     if (seconds / 60 === 1) {
         seconds = 0;
@@ -43,11 +39,6 @@ function stopWatch() {
         }
     }
 
-    if (leadmilliseconds < 10) {
-        leadmilliseconds = "0" + milliseconds.toString()
-    } else {
-        leadmilliseconds = milliseconds;
-    }
 
     if (leadingSeconds < 10) {
         leadingSeconds = "0" + seconds.toString()
@@ -70,7 +61,7 @@ function stopWatch() {
 
 
 
-    let displayTimer = document.getElementById('timer').innerText = leadingHour + ":" + leadingMinutes + ":" + leadingSeconds + ":" + leadmilliseconds;
+    let displayTimer = document.getElementById('timer').innerText = leadingHour + ":" + leadingMinutes + ":" + leadingSeconds;
 
 }
 
@@ -82,8 +73,8 @@ function stopWatch() {
 
 startStopBtn.addEventListener('click', function () {
     if (timerStatus === "stopped") {
-        timeInterval = window.setInterval(stopWatch, 10);
-        document.getElementById('startStopBtn').innerText = `< i class = 'fas fa-pause'></i>`;
+        timeInterval = window.setInterval(stopWatch, 1000);
+        document.getElementById('startStopBtn').innerText = "pause";
         timerStatus = "started";
     } 
     else {
@@ -98,6 +89,6 @@ resetBtn.addEventListener('click', function () {
     minutes = 0;
     hours = 0;
 
-    document.getElementById('timer').innerHTML = "00:00:00:00"
+    document.getElementById('timer').innerHTML = "00:00:00"
 })
 
