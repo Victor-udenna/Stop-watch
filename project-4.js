@@ -45,7 +45,7 @@ function stopWatch() {
 
 
     if (leadingMilli < 100) {
-        leadingMilli = milli.toString() + "0"
+        leadingMilli = milli.toString()
     } else {
         leadingMilli = milli;
     }
@@ -71,7 +71,7 @@ function stopWatch() {
 
 
 
-    let displayTimer = document.getElementById('timer').innerText = leadingHour + ":" + leadingMinutes + ":" + leadingSeconds + "." + leadingMilli;
+    let displayTimer = document.getElementById('timer').innerText = leadingHour + ":" + leadingMinutes + ":" + leadingSeconds + "." + leadingMilli + "0";
 
 }
 
@@ -100,6 +100,6 @@ resetBtn.addEventListener('click', function () {
     minutes = 0;
     hours = 0;
 
-    document.getElementById('timer').innerHTML = "00:00:00. 000"
+    document.getElementById('timer').innerHTML = "00:00:00.000"
 })
 
