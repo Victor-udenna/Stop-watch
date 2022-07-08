@@ -44,7 +44,7 @@ function stopWatch() {
     }
 
 
-    if (leadingMilli < 10) {
+    if (leadingMilli < 100) {
         leadingMilli = "0" + milli.toString()
     } else {
         leadingMilli = milli;
@@ -83,7 +83,7 @@ function stopWatch() {
 
 startStopBtn.addEventListener('click', function () {
     if (timerStatus === "stopped") {
-        timeInterval = window.setInterval(stopWatch, 1);
+        timeInterval = window.setInterval(stopWatch, 10);
         document.getElementById('startStopBtn').innerText = "pause";
         timerStatus = "started";
     } 
