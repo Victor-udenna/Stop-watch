@@ -9,7 +9,7 @@ body{
 }
 
 .container{
-    width: 80%;
+    width: 85%;
     height: 250px;
     background-color: #fff;
     border-radius: 30px;
@@ -66,7 +66,7 @@ button span{
 
 #timer{
     width: 100%;
-    font-size: 54px;
+    font-size: 45px;
     text-align: center;
     margin: 0px auto;
     padding-top: 35px;
