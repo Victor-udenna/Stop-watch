@@ -5,14 +5,14 @@ const resetBtn = document.querySelector('#resetBtn');
 
 
 // variables for time value
-
+let milli = 0;
 let seconds = 0;
 let minutes = 0;
 let hours = 0;
 
 
 // variable for leading zero
-
+let leadingMilli = 0;
 let leadingSeconds = 0;
 let leadingMinutes = 0;
 let leadingHour = 0;
@@ -26,8 +26,12 @@ let timerStatus = "stopped";
 // Stop watch function
 
 function stopWatch() {
-    seconds++
-
+    milli ++
+ 
+    if (milli / 100 === 1) {
+        milli = 0;
+        seconds++;
+    }
 
     if (seconds / 60 === 1) {
         seconds = 0;
@@ -39,6 +43,12 @@ function stopWatch() {
         }
     }
 
+
+    if (leadingMilli < 10) {
+        leadingMilli = "0" + milli.toString()
+    } else {
+        leadingMilli = milli;
+    }
 
     if (leadingSeconds < 10) {
         leadingSeconds = "0" + seconds.toString()
@@ -61,7 +71,7 @@ function stopWatch() {
 
 
 
-    let displayTimer = document.getElementById('timer').innerText = leadingHour + ":" + leadingMinutes + ":" + leadingSeconds;
+    let displayTimer = document.getElementById('timer').innerText = leadingHour + ":" + leadingMinutes + ":" + leadingSeconds + ":" + leadingMilli;
 
 }
 
@@ -73,7 +83,7 @@ function stopWatch() {
 
 startStopBtn.addEventListener('click', function () {
     if (timerStatus === "stopped") {
-        timeInterval = window.setInterval(stopWatch, 1000);
+        timeInterval = window.setInterval(stopWatch, 1);
         document.getElementById('startStopBtn').innerText = "pause";
         timerStatus = "started";
     } 
@@ -85,10 +95,11 @@ startStopBtn.addEventListener('click', function () {
 
 resetBtn.addEventListener('click', function () {
     window.clearInterval(timeInterval);
+    milli = 0;
     seconds = 0;
     minutes = 0;
     hours = 0;
 
-    document.getElementById('timer').innerHTML = "00:00:00"
+    document.getElementById('timer').innerHTML = "00:00:00:000"
 })
 
