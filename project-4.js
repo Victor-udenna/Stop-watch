@@ -1,7 +1,9 @@
 // variables for buttons
 
 const startStopBtn = document.querySelector('#startStop');
+const pause = document.querySelector('#pauseBtn');
 const resetBtn = document.querySelector('#resetBtn');
+// var t;
 
 
 // variables for time value
@@ -84,14 +86,21 @@ function stopWatch() {
 startStopBtn.addEventListener('click', function () {
     if (timerStatus === "stopped") {
         timeInterval = window.setInterval(stopWatch, 10);
-        document.getElementById('startStopBtn').innerText = "pause";
-        timerStatus = "started";
+        // document.getElementById('startStopBtn').innerText = "pause";
+        // timerStatus = "started";
     } 
-    else {
-        window.clearInterval(timeInterval);
-        timerStatus = "stopped";
-    }
+    // else {
+    //     window.clearInterval(timeInterval);
+    //     timerStatus = "stopped";
+    // }
 });
+
+pause.addEventListener('click', function () {
+    window.clearInterval(timeInterval);
+    timeInterval = null;
+})
+
+
 
 resetBtn.addEventListener('click', function () {
     window.clearInterval(timeInterval);

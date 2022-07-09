@@ -25,9 +25,8 @@ body{
 }
 
 button{
-    margin: 0 10px;
+    margin: 0 0px;
     border: none;
-    
     background-color: white;
 }
 
@@ -85,6 +84,12 @@ button span{
         box-shadow: 0 0 3px;
         padding-bottom: 5%;
     
+    }
+
+    button{
+        margin: 0 10px;
+        border: none;
+        background-color: white;
     }
 
     #timer{
