@@ -12,26 +12,34 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- CSS only -->
   </head>
   <body>
-    <div class="container">
-      <div id="timer">00:00:00.000</div>
-
-      <div class="buttons">
-        <button id="startStop">
-          <span id="play">Start</span>
-        </button>
-        
-    <button id="pauseBtn">
-      <span id="pause">Pause</span>
-    </button>
-
-        <button id="resetBtn">
-          <span id="reset">Reset</span>
-        </button>
-      </div>
+    <div class="header-container">
+      <h1 class="h1">St<span><img src="./images/stopwatch-fill.svg" alt="" class="watch"></span>p - <span class="watch">watch</span></h1>
     </div>
+
+<div class="main-container">
+  <div class="container">
+    <div id="timer">00:00:00.000</div>
+
+    <div class="buttons">
+      <button id="startStop">
+        <span id="play">Start</span>
+      </button>
+      
+  <button id="pauseBtn">
+    <span id="pause">Pause</span>
+  </button>
+
+      <button id="resetBtn">
+        <span id="reset">Reset</span>
+      </button>
+    </div>
+  </div>
+</div>
 
     <script src="project-4.js"></script>
     <!-- JavaScript Bundle with Popper -->
