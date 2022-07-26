@@ -3,7 +3,7 @@
 const startStopBtn = document.querySelector('#startStop');
 const pause = document.querySelector('#pauseBtn');
 const resetBtn = document.querySelector('#resetBtn');
-// var t;
+// Call start and stop btn in javascript
 
 
 // variables for time value
@@ -12,6 +12,8 @@ let seconds = 0;
 let minutes = 0;
 let hours = 0;
 
+// time unit variables
+
 
 // variable for leading zero
 let leadingMilli = 0;
@@ -19,6 +21,7 @@ let leadingSeconds = 0;
 let leadingMinutes = 0;
 let leadingHour = 0;
 
+// leading zeros in front for when unit are less than 10.
 
 // variable for set interval and timerstatus
 
@@ -45,7 +48,7 @@ function stopWatch() {
         }
     }
 
-
+// // Adds leading zeros to the time units when they areless than 10
     if (leadingMilli < 100) {
         leadingMilli = milli.toString()
     } else {
@@ -73,7 +76,7 @@ function stopWatch() {
 
 
 
-    let displayTimer = document.getElementById('timer').innerText = leadingHour + ":" + leadingMinutes + ":" + leadingSeconds + "." + leadingMilli + "0";
+    let displayTimer = document.getElementById('timer').innerText = leadingHour + ":" + leadingMinutes + ":" + leadingSeconds + "." + leadingMilli;
 
 }
 
@@ -83,6 +86,7 @@ function stopWatch() {
 
 
 
+// if timer starts the timer when it is stopped
 startStopBtn.addEventListener('click', function () {
     if (timerStatus === "stopped") {
         timeInterval = window.setInterval(stopWatch, 10);
@@ -95,13 +99,14 @@ startStopBtn.addEventListener('click', function () {
     // }
 });
 
+// sets the timer to null and the timeinterval to null that way is is paused
 pause.addEventListener('click', function () {
     window.clearInterval(timeInterval);
     timeInterval = null;
 })
 
 
-
+// sets the timer unit variables to zero
 resetBtn.addEventListener('click', function () {
     window.clearInterval(timeInterval);
     milli = 0;
@@ -109,6 +114,6 @@ resetBtn.addEventListener('click', function () {
     minutes = 0;
     hours = 0;
 
-    document.getElementById('timer').innerHTML = "00:00:00.000"
+    document.getElementById('timer').innerHTML = "00:00:00.00"
 })
 
